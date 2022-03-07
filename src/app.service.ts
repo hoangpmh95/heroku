@@ -7,6 +7,7 @@ export class AppService {
     getHello(): string {
         const port = this.configService.get('PORT');
         const nodeEnv = this.configService.get('NODE_ENV', 'Default');
-        return `PORT: ${port} - NODE_ENV: ${nodeEnv}`;
+        const npmConfigProduction = this.configService.get('NPM_CONFIG_PRODUCTION', 'Default');
+        return `PORT: ${port} - NODE_ENV: ${nodeEnv} - NPM_CONFIG_PRODUCTION: ${npmConfigProduction}`;
     }
 }
